@@ -40,11 +40,11 @@ if __name__ == '__main__':
     data_chuan_hoa = chuan_hoa_data_csv(data_csv)
     print(data_chuan_hoa)
 
-    vectorizer = TfidfVectorizer()
-    X = vectorizer.fit_transform(data_chuan_hoa)
-    Y = [tach_tu.tokenize(str(row)) for row in data_chuan_hoa]
+    train_data = data_chuan_hoa[:180]
+    test_data = data_chuan_hoa[180:200]
+    print(len(train_data))
 
-    print(vectorizer.get_stop_words())
+    tokenize_tfidf(data_chuan_hoa)
 
 
 
